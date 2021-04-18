@@ -36,6 +36,7 @@ table {
 }
 
 td {
+  width: 15vw;
   white-space: normal !important;
   word-wrap: break-word;
 }
