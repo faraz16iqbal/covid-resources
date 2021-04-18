@@ -15,7 +15,7 @@ export const fetchData = async (location) => {
 
   const sheet = doc.sheetsByTitle[location]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
   const data = await sheet.getRows();
-  console.log(data[0]);
+  console.log(data);
   let arr = [];
 
   data.forEach((a) => {
