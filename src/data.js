@@ -1,6 +1,6 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 
-const fetchData = async (location) => {
+export const fetchData = async (location) => {
   const doc = new GoogleSpreadsheet(
     "1K5uAC90MgrDPtaBVfPnmT_llqjrjG-NR6l6RsdsG97A"
   );
@@ -48,5 +48,3 @@ const fetchData = async (location) => {
   // const newSheet = await doc.addSheet({ title: "hot new sheet!" });
   // await newSheet.delete();
 };
-
-module.exports = { fetchData };

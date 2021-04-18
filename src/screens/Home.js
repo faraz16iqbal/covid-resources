@@ -19,15 +19,9 @@ const Home = ({ history }) => {
             <Form.Control as="select" custom onChange={onSelect}>
               <option></option>
               <option value="delhi">Delhi NCR</option>
-              <option>Mumbai</option>
-              <option>Lucknow</option>
-              <option>Noida</option>
-              <option>Gurgaon</option>
-              <option>Pune</option>
-              <option>Bangalore</option>
-              <option>Hyderabad</option>
-              <option>Gujarat</option>
-              <option>Bihar</option>
+              <option>Maharashtra</option>
+              <option value="up">Uttar Pradesh</option>
+              <option>Punjab</option>
             </Form.Control>
           </Form.Group>
         </Form>
