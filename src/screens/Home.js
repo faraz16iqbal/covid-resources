@@ -44,7 +44,7 @@ const Home = ({ history }) => {
           <h5>Plasma Donation Resources :</h5>
           <ul>
             <li>
-              <a href="https://doondh.com">https://doondh.com</a>
+              <a href="https://www.dhoondh.com/">https://www.dhoondh.com/</a>
             </li>
             <li>
               <a href="https://plasmadonor.in">https://plasmadonor.in</a>
@@ -56,7 +56,7 @@ const Home = ({ history }) => {
               <a href="https://plasmaline.in">https://plasmaline.in</a>
             </li>
             <li>
-              <a href="https://www.instagram.com/plasmadonors.delhi/">
+              <a href="https://delhifightscorona.in/requestplasma/">
                 https://delhifightscorona.in/requestplasma/
               </a>
             </li>

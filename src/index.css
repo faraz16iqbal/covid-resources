@@ -43,3 +43,9 @@ td {
 table {
   table-layout: fixed;
 }
+
+a.link2 {
+  color: white !important;
+  text-transform: lowercase;
+  text-decoration: underline;
+}

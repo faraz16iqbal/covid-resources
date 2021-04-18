@@ -52,11 +52,24 @@ const Region = ({ match }) => {
                     <td>{d.distributor && d.distributor}</td>
                     {data[0].city && <td>{d.city}</td>}
 
-                    <td>{d.helpline && d.helpline}</td>
+                    <td>
+                      {d.helpline && (
+                        <a href={`tel:${d.helpline}`} className="link2">
+                          {d.helpline}
+                        </a>
+                      )}
+                    </td>
                     <td
-                      tdStyle={{ whiteSpace: "normal", wordWrap: "break-word" }}
+                      tdStyle={{
+                        whiteSpace: "normal",
+                        wordWrap: "break-word",
+                      }}
                     >
-                      {d.links && d.links}
+                      {d.links && (
+                        <a className="link2" href={d.links}>
+                          {d.links}
+                        </a>
+                      )}
                     </td>
                     {/* <td>{d.extrainfo && d.extrainfo}</td> */}
                   </tr>
