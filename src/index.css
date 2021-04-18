@@ -29,6 +29,11 @@ a:link {
 li {
   font-size: 1.15rem;
 }
+table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
 
 td {
   white-space: normal !important;
@@ -36,8 +41,4 @@ td {
 }
 table {
   table-layout: fixed;
-}
-
-th {
-  font-size: 1.5rem;
 }

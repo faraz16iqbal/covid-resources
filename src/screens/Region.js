@@ -29,26 +29,24 @@ const Region = ({ match }) => {
         </Jumbotron>
       </Container>
 
-      <div className="px-5 text-center text-capitalize">
+      <div className="text-center text-capitalize">
         {data.length === 0 ? (
           <Spin />
         ) : (
-          <Table striped bordered hover size="sm" variant="dark" responsive>
+          <Table striped bordered hover variant="dark" responsive>
             <thead>
               <tr>
-                <th>No.</th>
                 <th>Facility</th>
                 <th>Distributor's Name</th>
                 {data[0].city ? <th>City</th> : ""}
                 <th>Contact Info</th>
                 <th>Links</th>
-                <th>Extra Info</th>
+                {/* <th>Extra Info</th> */}
               </tr>
             </thead>
             <tbody className="">
               {data.map((d, index) => (
                 <tr key={index}>
-                  <td>{index + 1}</td>
                   <td>{d.facility}</td>
                   <td>{d.distributor && d.distributor}</td>
                   {data[0].city && <td>{d.city}</td>}
@@ -59,7 +57,7 @@ const Region = ({ match }) => {
                   >
                     {d.links && d.links}
                   </td>
-                  <td>{d.extrainfo && d.extrainfo}</td>
+                  {/* <td>{d.extrainfo && d.extrainfo}</td> */}
                 </tr>
               ))}
             </tbody>
