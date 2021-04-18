@@ -1,7 +1,5 @@
 import "./App.css";
 import Home from "./screens/Home";
-import { useEffect } from "react";
-import { fetchData } from "./data";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import Region from "./screens/Region";
 

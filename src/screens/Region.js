@@ -15,9 +15,10 @@ const Region = ({ match }) => {
   };
 
   useEffect(() => {
-    console.log(data);
+    // console.log(data);
     getData(location);
-    console.log(data);
+    // console.log(data);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
