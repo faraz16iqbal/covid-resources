@@ -12,23 +12,15 @@ const Region = ({ match }) => {
 
   const location = match.params.id;
 
-  // const buttonFunction = () => {
-  //   function onlyUnique(value, index, self) {
-  //     return self.indexOf(value) === index;
-  //   }
-
-  //   var tempButtons = [];
-  //   data.forEach((d) => {
-  //     tempButtons.push(d.facility);
-  //   });
-
-  //   var unique = tempButtons.filter(onlyUnique);
-  //   // console.log(tempButtons);
-  //   setButtons(unique);
-  // };
-
   const getData = async (location) => {
     const tempData = await fetchData(location);
+    function sortBy(field) {
+      return function (a, b) {
+        return (a[field] > b[field]) - (a[field] < b[field]);
+      };
+    }
+
+    tempData.sort(sortBy("facility"));
     setData(tempData);
     setLoading(false);
   };
@@ -51,6 +43,7 @@ const Region = ({ match }) => {
             <th>Distributor's Name</th>
             {data[0].city ? <th>City</th> : ""}
             <th>Contact Info</th>
+            <th>Extra Info</th>
             <th>Links</th>
           </tr>
         </thead>
@@ -69,6 +62,7 @@ const Region = ({ match }) => {
                   </a>
                 )}
               </td>
+              <td>{d.extrainfo}</td>
               <td>
                 {d.links && (
                   <a className="link2" href={d.links} target="_blank">
@@ -136,11 +130,11 @@ const Region = ({ match }) => {
             </Form.Group>
           </Form>
         )}
-
-        <div className="text-center text-capitalize">
-          {loading ? <Spin /> : display(choice)}
-        </div>
       </Container>
+
+      <div className="px-5 text-center text-capitalize">
+        {loading ? <Spin /> : display(choice)}
+      </div>
     </>
   );
 };
