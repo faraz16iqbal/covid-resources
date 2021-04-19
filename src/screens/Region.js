@@ -2,12 +2,12 @@
 import React, { useEffect, useState } from "react";
 import { Jumbotron, Container, Table, Form } from "react-bootstrap";
 import Spin from "../components/Spinner";
-import { fetchData, getButtons } from "../data";
+import { fetchData } from "../data";
 
 const Region = ({ match }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [buttons, setButtons] = useState([]);
+  // const [buttons, setButtons] = useState([]);
   const [choice, setChoice] = useState("All");
 
   const location = match.params.id;
