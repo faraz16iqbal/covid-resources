@@ -10,7 +10,7 @@ const Home = ({ history }) => {
     <>
       <Jumbotron className="text-center">
         <h1>COVID-19 Resources</h1>
-        <h3> This is a list of exhaustible list of resources for Covid-19.</h3>
+        <h3> This is a list of exhaustible resources for Covid-19.</h3>
       </Jumbotron>
       <Container>
         <Form>
@@ -25,6 +25,10 @@ const Home = ({ history }) => {
             </Form.Control>
           </Form.Group>
         </Form>
+
+        <Container className="text-center pt-5">
+          <h2>Other List Of Resources</h2>
+        </Container>
 
         <Alert variant="danger">
           <h5>

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React, { useEffect, useState } from "react";
 import { Jumbotron, Container, Table } from "react-bootstrap";
 import Spin from "../components/Spinner";
@@ -66,7 +67,7 @@ const Region = ({ match }) => {
                       }}
                     >
                       {d.links && (
-                        <a className="link2" href={d.links}>
+                        <a className="link2" href={d.links} target="_blank">
                           {d.links}
                         </a>
                       )}
