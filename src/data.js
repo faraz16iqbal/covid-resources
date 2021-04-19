@@ -12,11 +12,11 @@ export const fetchData = async (location) => {
   });
 
   await doc.loadInfo(); // loads document properties and worksheets
-  console.log(doc);
+  // console.log(doc);
 
   const sheet = doc.sheetsByTitle[location]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
   const data = await sheet.getRows();
-  console.log(data);
+  // console.log(data);
   let arr = [];
 
   data.forEach((a) => {
@@ -35,7 +35,6 @@ export const fetchData = async (location) => {
       extrainfo,
       city,
     });
-    console.log(city);
     if (city === undefined) {
       delete arr[arr.length - 1]["city"];
     }
