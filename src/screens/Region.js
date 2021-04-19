@@ -145,7 +145,7 @@ const Region = ({ match }) => {
         )}
       </Container>
 
-      <div className="px-5 text-center text-capitalize">
+      <div className="text-center text-capitalize">
         {loading ? <Spin /> : display(choice)}
       </div>
     </>
