@@ -118,13 +118,13 @@ const Region = ({ match }) => {
               <Form.Control as="select" custom onChange={onSelect}>
                 <option>All</option>
 
-                {buttons.length !== 0
+                {/* {buttons.length !== 0
                   ? buttons.map((b, i) => (
                       <option key={i} value={b.toLowerCase()}>
                         {b}
                       </option>
                     ))
-                  : ""}
+                  : ""} */}
               </Form.Control>
             </Form.Group>
           </Form>
