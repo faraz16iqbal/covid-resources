@@ -54,3 +54,10 @@ a.link2 {
   white-space: normal !important;
   word-wrap: break-word;
 }
+
+a.foot,
+a:link.foot,
+.foot {
+  color: purple !important;
+  font-size: 1.25rem;
+}
