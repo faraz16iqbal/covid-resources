@@ -49,3 +49,8 @@ a.link2 {
   text-transform: lowercase;
   text-decoration: underline;
 }
+
+.break {
+  white-space: normal !important;
+  word-wrap: break-word;
+}

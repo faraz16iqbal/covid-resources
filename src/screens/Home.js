@@ -12,7 +12,7 @@ const Home = ({ history }) => {
         <h1>COVID-19 Resources</h1>
         <h3> This is a list of exhaustible resources for Covid-19.</h3>
       </Jumbotron>
-      <Container>
+      <Container class="main">
         <Form>
           <Form.Group controlId="exampleForm.SelectCustom">
             <Form.Label>Select Region</Form.Label>
@@ -30,21 +30,21 @@ const Home = ({ history }) => {
           <h2>Other List Of Resources</h2>
         </Container>
 
-        <Alert variant="danger">
+        <Alert className="break" variant="danger">
           <h5>
             <a href="https://coronabeds.jantasamvad.org/beds.html">
               Delhi Govt's Website for Bed Availability
             </a>
           </h5>
         </Alert>
-        <Alert variant="success">
+        <Alert variant="success" className="break">
           <h5>
             <a href="https://www.google.com/maps/d/viewer?mid=1yxvXy78wkNoYdtKHYDCPu0lcFfgqB0yq&shorturl=1&ll=28.656388086331848%2C77.13615215305117&z=12">
               Resources available near you (Delhi)
             </a>
           </h5>
         </Alert>
-        <Alert variant="warning">
+        <Alert variant="warning" className="break">
           <h5>Plasma Donation Resources :</h5>
           <ul>
             <li>
@@ -71,7 +71,7 @@ const Home = ({ history }) => {
             </li>
           </ul>
         </Alert>
-        <Alert variant="secondary">
+        <Alert variant="secondary" className="break">
           <h5>List of Vaccine Distributors and Suppliers</h5>
           <ul>
             <li>
