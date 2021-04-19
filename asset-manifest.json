@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/faraz16iqbal/covid-resources/static/css/main.eb6d0bc7.chunk.css",
+    "main.js": "/faraz16iqbal/covid-resources/static/js/main.ce77e572.chunk.js",
+    "main.js.map": "/faraz16iqbal/covid-resources/static/js/main.ce77e572.chunk.js.map",
+    "runtime-main.js": "/faraz16iqbal/covid-resources/static/js/runtime-main.c834f67e.js",
+    "runtime-main.js.map": "/faraz16iqbal/covid-resources/static/js/runtime-main.c834f67e.js.map",
+    "static/css/2.150d169a.chunk.css": "/faraz16iqbal/covid-resources/static/css/2.150d169a.chunk.css",
+    "static/js/2.8e9cf0b7.chunk.js": "/faraz16iqbal/covid-resources/static/js/2.8e9cf0b7.chunk.js",
+    "static/js/2.8e9cf0b7.chunk.js.map": "/faraz16iqbal/covid-resources/static/js/2.8e9cf0b7.chunk.js.map",
+    "index.html": "/faraz16iqbal/covid-resources/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/faraz16iqbal/covid-resources/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.eb6d0bc7.chunk.css.map": "/faraz16iqbal/covid-resources/static/css/main.eb6d0bc7.chunk.css.map",
+    "static/js/2.8e9cf0b7.chunk.js.LICENSE.txt": "/faraz16iqbal/covid-resources/static/js/2.8e9cf0b7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c834f67e.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.8e9cf0b7.chunk.js",
+    "static/css/main.eb6d0bc7.chunk.css",
+    "static/js/main.ce77e572.chunk.js"
+  ]
+}
