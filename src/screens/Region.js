@@ -113,11 +113,10 @@ const Region = ({ match }) => {
       </Container>
       <Container className="text-center">
         <Button
-          variant="info mr-3"
+          variant="info mb-3 px-5 py-2"
           style={{
             display: loading ? "none" : "inline-block",
-            width: "12%",
-            fontSize: "1.2rem",
+            fontSize: "1.25rem",
           }}
           className="buttonn "
           href="/"
@@ -125,7 +124,7 @@ const Region = ({ match }) => {
           Go Back
         </Button>
         {!loading && (
-          <Form responsive style={{ display: "inline-block", width: "80%" }}>
+          <Form responsive>
             <Form.Group controlId="exampleForm.SelectCustom">
               <Form.Label style={{ fontSize: "1.25rem" }}>
                 Find Service
