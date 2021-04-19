@@ -44,7 +44,7 @@ const Home = ({ history }) => {
             </a>
           </h5>
         </Alert>
-        <Alert variant="primary">
+        <Alert variant="warning">
           <h5>Plasma Donation Resources :</h5>
           <ul>
             <li>
