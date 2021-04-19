@@ -7,7 +7,7 @@ import { fetchData } from "../data";
 const Region = ({ match }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  // const [buttons, setButtons] = useState([]);
+  const [buttons, setButtons] = useState([]);
   const [choice, setChoice] = useState("All");
 
   const location = match.params.id;
@@ -25,14 +25,6 @@ const Region = ({ match }) => {
   //   var unique = tempButtons.filter(onlyUnique);
   //   // console.log(tempButtons);
   //   setButtons(unique);
-  // };
-
-  // const fetchButtons = () => {
-  //   const btns = getButtons();
-  //   setButtons(btns);
-  //   if (btns.length === 0) {
-  //     fetchButtons();
-  //   }
   // };
 
   const getData = async (location) => {
@@ -84,7 +76,6 @@ const Region = ({ match }) => {
                   </a>
                 )}
               </td>
-              {/* <td>{d.extrainfo && d.extrainfo}</td> */}
             </tr>
           ))}
         </tbody>
@@ -99,9 +90,25 @@ const Region = ({ match }) => {
 
   useEffect(() => {
     getData(location);
+
     // console.log(getData);s
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    function onlyUnique(value, index, self) {
+      return self.indexOf(value) === index;
+    }
+
+    var tempButtons = [];
+    data.forEach((d) => {
+      tempButtons.push(d.facility);
+    });
+
+    var unique = tempButtons.filter(onlyUnique);
+    // console.log(tempButtons);
+    setButtons(unique);
+  }, [data]);
 
   return (
     <>
@@ -118,13 +125,13 @@ const Region = ({ match }) => {
               <Form.Control as="select" custom onChange={onSelect}>
                 <option>All</option>
 
-                {/* {buttons.length !== 0
+                {buttons.length !== 0
                   ? buttons.map((b, i) => (
                       <option key={i} value={b.toLowerCase()}>
                         {b}
                       </option>
                     ))
-                  : ""} */}
+                  : ""}
               </Form.Control>
             </Form.Group>
           </Form>
