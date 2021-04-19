@@ -5,10 +5,12 @@ import Region from "./screens/Region";
 
 function App() {
   return (
-    <Router>
-      <Route path="/:id" component={Region} />
-      <Route exact path="/" component={Home} />
-    </Router>
+    <>
+      <Router>
+        <Route path="/:id" component={Region} />
+        <Route exact path="/" component={Home} />
+      </Router>
+    </>
   );
 }
 
