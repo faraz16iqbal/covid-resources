@@ -19,27 +19,28 @@ function App() {
               {" "}
               In case you want to lend a helping hand or have verified resouces,
               you can reach out to me via{" "}
-              <div className="foot">
-                <li>
-                  <a
-                    className="foot"
-                    href="mailto:faraziqbal2001@gmail.com"
-                    target="_blank"
-                  >
-                    Email
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="foot"
-                    href="https://instagram.com/faraziqbaal"
-                    target="_blank"
-                  >
-                    Instagram
-                  </a>
-                </li>
-              </div>
             </p>
+
+            <div className="foot">
+              <li>
+                <a
+                  className="foot"
+                  href="mailto:faraziqbal2001@gmail.com"
+                  target="_blank"
+                >
+                  Email
+                </a>
+              </li>
+              <li>
+                <a
+                  className="foot"
+                  href="https://instagram.com/faraziqbaal"
+                  target="_blank"
+                >
+                  Instagram
+                </a>
+              </li>
+            </div>
           </blockquote>
         </Card.Body>
       </Card>

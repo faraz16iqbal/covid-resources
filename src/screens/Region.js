@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Jumbotron, Container, Table, Form } from "react-bootstrap";
 import Spin from "../components/Spinner";
-import { fetchData } from "../data";
+import { fetchData, getButtons } from "../data";
 
 const Region = ({ match }) => {
   const [data, setData] = useState([]);
@@ -12,20 +12,28 @@ const Region = ({ match }) => {
 
   const location = match.params.id;
 
-  const buttonFunction = () => {
-    function onlyUnique(value, index, self) {
-      return self.indexOf(value) === index;
-    }
+  // const buttonFunction = () => {
+  //   function onlyUnique(value, index, self) {
+  //     return self.indexOf(value) === index;
+  //   }
 
-    var tempButtons = [];
-    data.forEach((d) => {
-      tempButtons.push(d.facility);
-    });
+  //   var tempButtons = [];
+  //   data.forEach((d) => {
+  //     tempButtons.push(d.facility);
+  //   });
 
-    var unique = tempButtons.filter(onlyUnique);
-    // console.log(tempButtons);
-    setButtons(unique);
-  };
+  //   var unique = tempButtons.filter(onlyUnique);
+  //   // console.log(tempButtons);
+  //   setButtons(unique);
+  // };
+
+  // const fetchButtons = () => {
+  //   const btns = getButtons();
+  //   setButtons(btns);
+  //   if (btns.length === 0) {
+  //     fetchButtons();
+  //   }
+  // };
 
   const getData = async (location) => {
     const tempData = await fetchData(location);
@@ -91,10 +99,9 @@ const Region = ({ match }) => {
 
   useEffect(() => {
     getData(location);
-    buttonFunction();
     // console.log(getData);s
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loading]);
+  }, []);
 
   return (
     <>
@@ -110,13 +117,14 @@ const Region = ({ match }) => {
               <Form.Label>Find Service</Form.Label>
               <Form.Control as="select" custom onChange={onSelect}>
                 <option>All</option>
-                {buttons.length === 1 ? buttonFunction() : ""}
 
-                {buttons.map((b, i) => (
-                  <option key={i} value={b.toLowerCase()}>
-                    {b}
-                  </option>
-                ))}
+                {buttons.length !== 0
+                  ? buttons.map((b, i) => (
+                      <option key={i} value={b.toLowerCase()}>
+                        {b}
+                      </option>
+                    ))
+                  : ""}
               </Form.Control>
             </Form.Group>
           </Form>

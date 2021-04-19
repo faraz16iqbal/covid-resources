@@ -1,5 +1,25 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 
+let data = [];
+
+export const getButtons = async () => {
+  function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+  }
+
+  var tempButtons = [];
+  data.forEach((d) => {
+    tempButtons.push(d.facility);
+  });
+
+  console.log(data);
+
+  var unique = tempButtons.filter(onlyUnique);
+  console.log(unique);
+  return unique;
+  // console.log(tempButtons);
+};
+
 export const fetchData = async (location) => {
   const doc = new GoogleSpreadsheet(
     "1K5uAC90MgrDPtaBVfPnmT_llqjrjG-NR6l6RsdsG97A"
@@ -15,7 +35,7 @@ export const fetchData = async (location) => {
   // console.log(doc);
 
   const sheet = doc.sheetsByTitle[location]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
-  const data = await sheet.getRows();
+  data = await sheet.getRows();
   // console.log(data);
   let arr = [];
 
