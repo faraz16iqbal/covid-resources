@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { useEffect, useState } from "react";
-import { Jumbotron, Container, Table, Form } from "react-bootstrap";
+import { Jumbotron, Container, Table, Form, Button } from "react-bootstrap";
 import Spin from "../components/Spinner";
 import { fetchData } from "../data";
 
@@ -16,7 +16,10 @@ const Region = ({ match }) => {
     const tempData = await fetchData(location);
     function sortBy(field) {
       return function (a, b) {
-        return (a[field] > b[field]) - (a[field] < b[field]);
+        return (
+          (a[field].toLowerCase() > b[field].toLowerCase()) -
+          (a[field].toLowerCase() < b[field].toLowerCase())
+        );
       };
     }
 
@@ -84,8 +87,6 @@ const Region = ({ match }) => {
 
   useEffect(() => {
     getData(location);
-
-    // console.log(getData);s
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -100,7 +101,6 @@ const Region = ({ match }) => {
     });
 
     var unique = tempButtons.filter(onlyUnique);
-    // console.log(tempButtons);
     setButtons(unique);
   }, [data]);
 
@@ -111,11 +111,25 @@ const Region = ({ match }) => {
           <h1>COVID-19 RESOURCES FOR {location.toUpperCase()}</h1>
         </Jumbotron>
       </Container>
-      <Container>
+      <Container className="text-center">
+        <Button
+          variant="info mr-3"
+          style={{
+            display: loading ? "none" : "inline-block",
+            width: "12%",
+            fontSize: "1.2rem",
+          }}
+          className="buttonn "
+          href="/"
+        >
+          Go Back
+        </Button>
         {!loading && (
-          <Form>
+          <Form responsive style={{ display: "inline-block", width: "80%" }}>
             <Form.Group controlId="exampleForm.SelectCustom">
-              <Form.Label>Find Service</Form.Label>
+              <Form.Label style={{ fontSize: "1.25rem" }}>
+                Find Service
+              </Form.Label>
               <Form.Control as="select" custom onChange={onSelect}>
                 <option>All</option>
 
