@@ -30,6 +30,13 @@ const Home = ({ history }) => {
         <Container className="text-center pt-5">
           <h2>Other List Of Resources</h2>
         </Container>
+        <Alert className="break" variant="info">
+          <h5>
+            <a href="https://covidfacts.in">
+              IMPORTANT! Resources around you district wise
+            </a>
+          </h5>
+        </Alert>
 
         <Alert className="break" variant="danger">
           <h5>
