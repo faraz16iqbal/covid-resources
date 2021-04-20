@@ -18,7 +18,7 @@ function App() {
             <p>
               {" "}
               In case you want to lend a helping hand or have verified resouces,
-              you can reach out to me via{" "}
+              you can reach out to Faraz Iqbal via{" "}
             </p>
 
             <div className="foot">
