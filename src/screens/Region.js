@@ -112,9 +112,9 @@ const Region = ({ match }) => {
           <h4 className="mt-5">
             {" "}
             The website is constatly being updated with the latest resources,
-            but most of them are exhaustive. If the website does not show up
-            with any data or the links provided do not word, do not panic and
-            come back a couple of minutes later.{" "}
+            but most of them are <strong>exhaustive.</strong> If the website
+            does not show up with any data or the links provided do not work, do
+            not panic and come back a couple of minutes later.{" "}
           </h4>
         </Jumbotron>
       </Container>
