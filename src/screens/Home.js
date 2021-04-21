@@ -25,6 +25,9 @@ const Home = ({ history }) => {
               <option value="up">Uttar Pradesh</option>
               <option value="bengal">West Bengal</option>
               <option value="mp">Madhya Pradesh</option>
+              <option value="jk">Jammu and Kashmir</option>
+              <option value="lucknow">Lucknow</option>
+              <option value="mp">Madhya Pradesh</option>
               <option>Punjab/Haryana</option>
             </Form.Control>
           </Form.Group>
