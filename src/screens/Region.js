@@ -109,6 +109,13 @@ const Region = ({ match }) => {
       <Container className="text-center">
         <Jumbotron>
           <h1>COVID-19 RESOURCES FOR {location.toUpperCase()}</h1>
+          <h4 className="mt-5">
+            {" "}
+            The website is constatly being updated with the latest resources,
+            most of them are exhaustive. If the website does not show up with
+            any data or the links provided do not word, do not panic and come
+            back a couple of minutes later.{" "}
+          </h4>
         </Jumbotron>
       </Container>
       <Container className="text-center">
@@ -124,7 +131,7 @@ const Region = ({ match }) => {
           Go Back
         </Button>
         {!loading && (
-          <Form responsive>
+          <Form responsive className="mb-4">
             <Form.Group controlId="exampleForm.SelectCustom">
               <Form.Label style={{ fontSize: "1.25rem" }}>
                 Find Service
