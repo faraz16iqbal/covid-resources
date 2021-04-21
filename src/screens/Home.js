@@ -19,7 +19,9 @@ const Home = ({ history }) => {
             <Form.Control as="select" custom onChange={onSelect}>
               <option></option>
               <option value="delhi">Delhi NCR</option>
-              <option>Maharashtra</option>
+              <option value="maharashtra">Maharashtra</option>
+              <option value="bihar">Bihar</option>
+              <option value="bangalore">Bangalore</option>
               <option value="up">Uttar Pradesh</option>
               <option value="bengal">West Bengal</option>
               <option>Punjab/Haryana</option>
@@ -28,7 +30,7 @@ const Home = ({ history }) => {
         </Form>
 
         <Container className="text-center pt-5">
-          <h2>Other List Of Resources</h2>
+          <h2>Other List Of Important Resources</h2>
         </Container>
         <Alert className="break" variant="info">
           <h5>
