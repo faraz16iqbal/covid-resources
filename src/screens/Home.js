@@ -1,5 +1,6 @@
 import React from "react";
 import { Jumbotron, Form, Container, Alert } from "react-bootstrap";
+import CardComp from "../components/CardComp";
 
 const Home = ({ history }) => {
   const onSelect = (e) => {
@@ -11,6 +12,7 @@ const Home = ({ history }) => {
       <Jumbotron className="text-center">
         <h1>COVID-19 Resources</h1>
         <h3> This is a list of exhaustible resources for Covid-19.</h3>
+        <CardComp />
       </Jumbotron>
       <Container class="main">
         <Form>
@@ -24,7 +26,7 @@ const Home = ({ history }) => {
               <option value="bangalore">Bangalore</option>
               <option value="up">Uttar Pradesh</option>
               <option value="bengal">West Bengal</option>
-              <option value="mp">Madhya Pradesh</option>
+              <option value="karnataka">Karnataka</option>
               <option value="jk">Jammu and Kashmir</option>
               <option value="lucknow">Lucknow</option>
               <option value="mp">Madhya Pradesh</option>
