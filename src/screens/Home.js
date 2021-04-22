@@ -7,6 +7,23 @@ const Home = ({ history }) => {
     console.log(e.target.value);
     history.push(e.target.value.toLowerCase());
   };
+
+  const options = [
+    ["delhi", "Delhi NCR"],
+    ["maharashtra", "Maharashtra"],
+    ["agra", "Agra"],
+    ["bihar", "Bihar"],
+    ["bangalore", "Bangalore"],
+    ["up", "Uttar Pradesh"],
+    ["westbengal", "West Bengal"],
+    // ["karnataka", "Karnataka"],
+    ["lucknow", "Lucknow"],
+    ["mp", "Madhya Pradesh"],
+    ["punjab", "Punjab/Haryana"],
+    ["jk", "Jammu and Kashmir"],
+    ["rajasthan", "Rajasthan"],
+  ];
+
   return (
     <>
       <Jumbotron className="text-center">
@@ -14,23 +31,19 @@ const Home = ({ history }) => {
         <h3> This is a list of exhaustible resources for Covid-19.</h3>
         <CardComp />
       </Jumbotron>
-      <Container class="main">
+      <Container className="main">
         <Form>
           <Form.Group controlId="exampleForm.SelectCustom">
             <Form.Label>Select Region</Form.Label>
             <Form.Control as="select" custom onChange={onSelect}>
-              <option></option>
-              <option value="delhi">Delhi NCR</option>
-              <option value="maharashtra">Maharashtra</option>
-              <option value="bihar">Bihar</option>
-              <option value="bangalore">Bangalore</option>
-              <option value="up">Uttar Pradesh</option>
-              <option value="bengal">West Bengal</option>
-              <option value="karnataka">Karnataka</option>
-              <option value="jk">Jammu and Kashmir</option>
-              <option value="lucknow">Lucknow</option>
-              <option value="mp">Madhya Pradesh</option>
-              <option>Punjab/Haryana</option>
+              <option value="">Select</option>
+              {options.sort().map((op, i) => {
+                return (
+                  <option key={i} value={op[0]}>
+                    {op[1]}
+                  </option>
+                );
+              })}
             </Form.Control>
           </Form.Group>
         </Form>
