@@ -22,6 +22,7 @@ const Home = ({ history }) => {
     ["punjab", "Punjab/Haryana"],
     ["jk", "Jammu and Kashmir"],
     ["rajasthan", "Rajasthan"],
+    ["aligarh", "Aligarh"],
   ];
 
   return (
@@ -51,13 +52,13 @@ const Home = ({ history }) => {
         <Container className="text-center pt-5">
           <h2>Other List Of Important Resources</h2>
         </Container>
-        <Alert className="break" variant="info">
+        {/* <Alert className="break" variant="info">
           <h5>
             <a href="https://covidfacts.in">
-              IMPORTANT! Resources around you district wise
+              IMPORTANT! Twitter bot to find relevant resources
             </a>
           </h5>
-        </Alert>
+        </Alert> */}
 
         <Alert className="break" variant="danger">
           <h5>

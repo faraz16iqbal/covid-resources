@@ -25,6 +25,7 @@ const Region = ({ match }) => {
     }
 
     tempData.sort(sortBy("facility"));
+    tempData.filter();
     setData(tempData);
     setLoading(false);
   };
