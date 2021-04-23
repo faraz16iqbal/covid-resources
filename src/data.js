@@ -1,23 +1,6 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 let data = [];
 
-const options = [
-  ["delhi", "Delhi NCR"],
-  ["maharashtra", "Maharashtra"],
-  ["agra", "Agra"],
-  ["bihar", "Bihar"],
-  ["bangalore", "Bangalore"],
-  ["up", "Uttar Pradesh"],
-  ["westbengal", "West Bengal"],
-  // ["karnataka", "Karnataka"],
-  ["lucknow", "Lucknow"],
-  ["mp", "Madhya Pradesh"],
-  ["punjab", "Punjab/Haryana"],
-  ["jk", "Jammu and Kashmir"],
-  ["rajasthan", "Rajasthan"],
-  ["aligarh", "Aligarh"],
-];
-
 export const fetchData = async (location) => {
   const doc = new GoogleSpreadsheet(
     "1K5uAC90MgrDPtaBVfPnmT_llqjrjG-NR6l6RsdsG97A"
