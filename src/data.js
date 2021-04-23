@@ -1,24 +1,22 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
-
 let data = [];
 
-export const getButtons = async () => {
-  function onlyUnique(value, index, self) {
-    return self.indexOf(value) === index;
-  }
-
-  var tempButtons = [];
-  data.forEach((d) => {
-    tempButtons.push(d.facility);
-  });
-
-  console.log(data);
-
-  var unique = tempButtons.filter(onlyUnique);
-  console.log(unique);
-  return unique;
-  // console.log(tempButtons);
-};
+const options = [
+  ["delhi", "Delhi NCR"],
+  ["maharashtra", "Maharashtra"],
+  ["agra", "Agra"],
+  ["bihar", "Bihar"],
+  ["bangalore", "Bangalore"],
+  ["up", "Uttar Pradesh"],
+  ["westbengal", "West Bengal"],
+  // ["karnataka", "Karnataka"],
+  ["lucknow", "Lucknow"],
+  ["mp", "Madhya Pradesh"],
+  ["punjab", "Punjab/Haryana"],
+  ["jk", "Jammu and Kashmir"],
+  ["rajasthan", "Rajasthan"],
+  ["aligarh", "Aligarh"],
+];
 
 export const fetchData = async (location) => {
   const doc = new GoogleSpreadsheet(
@@ -35,6 +33,7 @@ export const fetchData = async (location) => {
   // console.log(doc);
 
   const sheet = doc.sheetsByTitle[location]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
+
   data = await sheet.getRows();
   // console.log(data);
   let arr = [];
@@ -61,10 +60,4 @@ export const fetchData = async (location) => {
   });
 
   return arr;
-
-  // console.log(sheet.rowCount);
-
-  // adding / removing sheets
-  // const newSheet = await doc.addSheet({ title: "hot new sheet!" });
-  // await newSheet.delete();
 };

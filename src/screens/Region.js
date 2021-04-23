@@ -133,7 +133,7 @@ const Region = ({ match }) => {
           Go Back
         </Button>
         {!loading && (
-          <Form responsive className="mb-4">
+          <Form responsive="true" className="mb-4">
             <Form.Group controlId="exampleForm.SelectCustom">
               <Form.Label style={{ fontSize: "1.25rem" }}>
                 Find Service

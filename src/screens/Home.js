@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Jumbotron, Form, Container, Alert } from "react-bootstrap";
 import CardComp from "../components/CardComp";
 
@@ -25,6 +25,11 @@ const Home = ({ history }) => {
     ["aligarh", "Aligarh"],
   ];
 
+  useEffect(() => {
+    options.sort();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <Jumbotron className="text-center">
@@ -38,7 +43,7 @@ const Home = ({ history }) => {
             <Form.Label>Select Region</Form.Label>
             <Form.Control as="select" custom onChange={onSelect}>
               <option value="">Select</option>
-              {options.sort().map((op, i) => {
+              {options.map((op, i) => {
                 return (
                   <option key={i} value={op[0]}>
                     {op[1]}
