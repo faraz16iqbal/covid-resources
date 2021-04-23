@@ -28,6 +28,7 @@ export const fetchData = async (location) => {
     const links = a["Links"];
     const city = a["City"];
     const extrainfo = a["Extra Info"];
+    const status = a["Status"];
 
     arr.push({
       facility,
@@ -36,11 +37,14 @@ export const fetchData = async (location) => {
       links,
       extrainfo,
       city,
+      status,
     });
     if (city === undefined) {
       delete arr[arr.length - 1]["city"];
     }
   });
+
+  console.log(arr);
 
   return arr;
 };

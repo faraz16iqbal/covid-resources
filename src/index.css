@@ -66,3 +66,20 @@ a.buttonn,
 a:link.buttonn {
   color: white !important;
 }
+
+.coloured {
+  color: black !important;
+}
+
+.red {
+  background-color: rgba(238, 63, 57, 0.877) !important;
+}
+
+.green {
+  background-color: rgb(12, 153, 54) !important;
+}
+
+.yellow {
+  background-color: rgb(212, 164, 31) !important;
+  /* background-color: black !important; */
+}

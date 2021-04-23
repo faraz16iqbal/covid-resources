@@ -53,7 +53,17 @@ const Region = ({ match }) => {
         </thead>
         <tbody>
           {viewData.map((d, index) => (
-            <tr key={index}>
+            // console.log(d.status)
+            <tr
+              key={index}
+              className={
+                d.status === undefined
+                  ? "yellow"
+                  : d.status === "1"
+                  ? "green"
+                  : "red"
+              }
+            >
               <td>{index + 1}</td>
               <td>{d.facility}</td>
               <td>{d.distributor && d.distributor}</td>
