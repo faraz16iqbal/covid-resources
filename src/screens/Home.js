@@ -23,6 +23,7 @@ const Home = ({ history }) => {
     ["jk", "Jammu and Kashmir"],
     ["rajasthan", "Rajasthan"],
     ["aligarh", "Aligarh"],
+    ["gujarat", "Gujarat"],
   ];
 
   useEffect(() => {
@@ -57,13 +58,6 @@ const Home = ({ history }) => {
         <Container className="text-center pt-5">
           <h2>Other List Of Important Resources</h2>
         </Container>
-        {/* <Alert className="break" variant="info">
-          <h5>
-            <a href="https://covidfacts.in">
-              IMPORTANT! Twitter bot to find relevant resources
-            </a>
-          </h5>
-        </Alert> */}
 
         <Alert className="break" variant="danger">
           <h5>

@@ -44,7 +44,5 @@ export const fetchData = async (location) => {
     }
   });
 
-  console.log(arr);
-
   return arr;
 };

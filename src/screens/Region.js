@@ -98,8 +98,7 @@ const Region = ({ match }) => {
 
   useEffect(() => {
     getData(location);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [location]);
 
   useEffect(() => {
     function onlyUnique(value, index, self) {
@@ -136,23 +135,31 @@ const Region = ({ match }) => {
           style={{
             display: loading ? "none" : "inline-block",
             fontSize: "1.25rem",
+            marginBottom: "2rem",
           }}
           className="buttonn "
           href="/"
         >
           Go Back
         </Button>
+        <br />
+        <Container
+          style={{ display: !loading ? "" : "none" }}
+          className="flex-column align-items-center justify-content-around"
+        >
+          <span className="legends red">Unavailable</span>
+          <span className="legends yellow">Unverified (Might Work)</span>
+          <span className="legends green">Verified / Available</span>
+        </Container>
+
         {!loading && (
-          <Form responsive="true" className="mb-4">
+          <Form responsive="true" className="mb-4 mt-4">
             <Form.Group controlId="exampleForm.SelectCustom">
-              <Form.Label style={{ fontSize: "1.25rem" }}>
-                Find Service
-              </Form.Label>
               <Form.Control as="select" custom onChange={onSelect}>
                 <option>All</option>
 
                 {buttons.length !== 0
-                  ? buttons.map((b, i) => (
+                  ? buttons.sort().map((b, i) => (
                       <option key={i} value={b.toLowerCase()}>
                         {b}
                       </option>

@@ -67,10 +67,6 @@ a:link.buttonn {
   color: white !important;
 }
 
-.coloured {
-  color: black !important;
-}
-
 .red {
   background-color: rgba(238, 63, 57, 0.877) !important;
 }
@@ -82,4 +78,13 @@ a:link.buttonn {
 .yellow {
   background-color: rgb(212, 164, 31) !important;
   /* background-color: black !important; */
+}
+
+.legends {
+  padding: 1rem 2rem;
+  color: white;
+  font-size: 1.15rem;
+  display: inline-block;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
 }
