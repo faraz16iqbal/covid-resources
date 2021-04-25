@@ -38,6 +38,14 @@ const Region = ({ match }) => {
       });
     }
 
+    // function sortBy(field) {
+    //   return function (a, b) {
+    //     return (a[field] > b[field]) - (a[field] < b[field]);
+    //   };
+    // }
+
+    // viewData.sort(sortBy("status")).reverse();
+
     return (
       <Table striped bordered hover variant="dark" responsive>
         <thead>
@@ -57,18 +65,13 @@ const Region = ({ match }) => {
             <tr
               key={index}
               className={
-                d.status === undefined
-                  ? "yellow"
-                  : d.status === "1"
-                  ? "green"
-                  : "red"
+                d.status === "0" ? "red" : d.status === "1" ? "green" : "yellow"
               }
             >
               <td>{index + 1}</td>
               <td>{d.facility}</td>
               <td>{d.distributor && d.distributor}</td>
-              {data[0].city && <td>{d.city}</td>}
-
+              {data[0].city && <td>{d.city}</td>};{" "}
               <td>
                 {d.helpline && (
                   <a href={`tel:${d.helpline}`} className="link2">

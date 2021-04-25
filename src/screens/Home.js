@@ -44,7 +44,7 @@ const Home = ({ history }) => {
             <Form.Label>Select Region</Form.Label>
             <Form.Control as="select" custom onChange={onSelect}>
               <option value="">Select</option>
-              {options.map((op, i) => {
+              {options.sort().map((op, i) => {
                 return (
                   <option key={i} value={op[0]}>
                     {op[1]}
