@@ -28,7 +28,11 @@ export const fetchData = async (location) => {
     const links = a["Links"];
     const city = a["City"];
     const extrainfo = a["Extra Info"];
-    const status = a["Status"];
+    let status = a["Status"];
+
+    if (status === undefined) {
+      status = -1;
+    }
 
     arr.push({
       facility,

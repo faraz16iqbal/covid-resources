@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { useEffect, useState } from "react";
 import { Jumbotron, Container, Table, Form, Button } from "react-bootstrap";
-import CardComp from "../components/CardComp";
+// import CardComp from "../components/CardComp";
 import Spin from "../components/Spinner";
 import { fetchData } from "../data";
 
@@ -126,7 +126,7 @@ const Region = ({ match }) => {
             does not show up with any data or the links provided do not work, do
             not panic and come back a couple of minutes later.{" "}
           </h4>
-          <CardComp />
+          {/* <CardComp /> */}
         </Jumbotron>
       </Container>
       <Container className="text-center">

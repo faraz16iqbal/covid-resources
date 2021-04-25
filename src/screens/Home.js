@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Jumbotron, Form, Container, Alert } from "react-bootstrap";
-import CardComp from "../components/CardComp";
+// import CardComp from "../components/CardComp";
 
 const Home = ({ history }) => {
   const onSelect = (e) => {
@@ -36,7 +36,7 @@ const Home = ({ history }) => {
       <Jumbotron className="text-center">
         <h1>COVID-19 Resources</h1>
         <h3> This is a list of exhaustible resources for Covid-19.</h3>
-        <CardComp />
+        {/* <CardComp /> */}
       </Jumbotron>
       <Container className="main">
         <Form>
