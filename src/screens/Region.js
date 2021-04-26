@@ -38,13 +38,13 @@ const Region = ({ match }) => {
       });
     }
 
-    // function sortBy(field) {
-    //   return function (a, b) {
-    //     return (a[field] > b[field]) - (a[field] < b[field]);
-    //   };
-    // }
+    function sortBy(field) {
+      return function (a, b) {
+        return (a[field] > b[field]) - (a[field] < b[field]);
+      };
+    }
 
-    // viewData.sort(sortBy("status")).reverse();
+    viewData.sort(sortBy("status")).reverse();
 
     return (
       <Table striped bordered hover variant="dark" responsive>
