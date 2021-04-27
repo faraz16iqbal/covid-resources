@@ -88,3 +88,7 @@ a:link.buttonn {
   margin-right: 1rem;
   margin-bottom: 0.5rem;
 }
+
+.bgimp.card.bg-warning {
+  background-color: rgb(212, 164, 31) !important;
+}

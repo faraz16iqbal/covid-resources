@@ -31,7 +31,7 @@ export const fetchData = async (location) => {
     let status = a["Status"];
 
     if (status === undefined) {
-      status = 0.5;
+      status = "0.5";
     }
 
     arr.push({

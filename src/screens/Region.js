@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { useEffect, useState } from "react";
-import { Jumbotron, Container, Table, Form, Button } from "react-bootstrap";
-// import CardComp from "../components/CardComp";
+import { Jumbotron, Container, Form, Button } from "react-bootstrap";
+import { InfoCard } from "../components/InfoCard";
 import Spin from "../components/Spinner";
 import { fetchData } from "../data";
 
@@ -13,27 +13,10 @@ const Region = ({ match }) => {
 
   const location = match.params.id;
 
-  const getData = async (location) => {
-    const tempData = await fetchData(location);
-    function sortBy(field) {
-      return function (a, b) {
-        return (
-          (a[field].toLowerCase() > b[field].toLowerCase()) -
-          (a[field].toLowerCase() < b[field].toLowerCase())
-        );
-      };
-    }
-
-    tempData.sort(sortBy("facility"));
-    setData(tempData);
-    setLoading(false);
-  };
-
   const display = (value) => {
-    let viewData = data;
-
+    let tempData = data;
     if (value !== "All") {
-      viewData = data.filter(function (item) {
+      tempData = data.filter(function (item) {
         return item.facility.toLowerCase() === value;
       });
     }
@@ -44,59 +27,30 @@ const Region = ({ match }) => {
       };
     }
 
-    viewData.sort(sortBy("status")).reverse();
+    tempData.sort(sortBy("status")).reverse();
+    // setViewData(tempData);
 
-    return (
-      <Table striped bordered hover variant="dark" responsive>
-        <thead>
-          <tr>
-            <th>No.</th>
-            <th>Facility</th>
-            <th>Distributor's Name</th>
-            {data[0].city ? <th>City</th> : ""}
-            <th>Contact Info</th>
-            <th>Extra Info</th>
-            <th>Links</th>
-          </tr>
-        </thead>
-        <tbody>
-          {viewData.map((d, index) => (
-            // console.log(d.status)
-            <tr
-              key={index}
-              className={
-                d.status === "0" ? "red" : d.status === "1" ? "green" : "yellow"
-              }
-            >
-              <td>{index + 1}</td>
-              <td>{d.facility}</td>
-              <td>{d.distributor && d.distributor}</td>
-              {data[0].city && <td>{d.city}</td>};{" "}
-              <td>
-                {d.helpline && (
-                  <a href={`tel:${d.helpline}`} className="link2">
-                    {d.helpline}
-                  </a>
-                )}
-              </td>
-              <td>{d.extrainfo}</td>
-              <td>
-                {d.links && (
-                  <a className="link2" href={d.links} target="_blank">
-                    {d.links}
-                  </a>
-                )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    );
+    return tempData.map((d, index) => <InfoCard id={index} data={d} />);
   };
 
   const onSelect = (e) => {
     setChoice(e.target.value);
     display(e.target.value);
+  };
+  const getData = async (location) => {
+    const tempData = await fetchData(location);
+    function sortBy(field) {
+      return function (a, b) {
+        return (
+          (a[field].toLowerCase() > b[field].toLowerCase()) -
+          (a[field].toLowerCase() < b[field].toLowerCase())
+        );
+      };
+    }
+    console.log(tempData);
+    tempData.sort(sortBy("facility"));
+    setData(tempData);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -174,9 +128,12 @@ const Region = ({ match }) => {
         )}
       </Container>
 
-      <div className="text-center text-capitalize">
+      <Container
+        className="text-center text-capitalize"
+        style={{ margin: "0 auto" }}
+      >
         {loading ? <Spin /> : display(choice)}
-      </div>
+      </Container>
     </>
   );
 };
