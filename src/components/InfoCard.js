@@ -1,14 +1,13 @@
 import { Card } from "react-bootstrap";
 import React from "react";
 
-export const InfoCard = ({ id, data }) => {
+export const InfoCard = ({ data }) => {
   let variant;
   data.status === "0.5"
     ? (variant = "Warning")
     : data.status === "1"
     ? (variant = "Success")
     : (variant = "Danger");
-  console.log(variant);
   return (
     <Card
       bg={variant.toLowerCase()}
@@ -32,8 +31,8 @@ export const InfoCard = ({ id, data }) => {
         </Card.Text>
 
         {data.links ? (
-          <Card.Text className="mb-2 h5">
-            Links : {data.links.toLowerCase()}
+          <Card.Text className="mb-2 h5 text-lowercase">
+            Links : {data.links}
           </Card.Text>
         ) : (
           ""

@@ -5,7 +5,7 @@ import { InfoCard } from "../components/InfoCard";
 import Spin from "../components/Spinner";
 import { fetchData } from "../data";
 
-const Region = ({ match }) => {
+const MentalHealth = ({ match }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [buttons, setButtons] = useState([]);
@@ -30,7 +30,7 @@ const Region = ({ match }) => {
     tempData.sort(sortBy("status")).reverse();
     // setViewData(tempData);
 
-    return tempData.map((d, index) => <InfoCard key={index} data={d} />);
+    return tempData.map((d, index) => <InfoCard id={index} data={d} />);
   };
 
   const onSelect = (e) => {
@@ -137,4 +137,4 @@ const Region = ({ match }) => {
   );
 };
 
-export default Region;
+export default MentalHealth;

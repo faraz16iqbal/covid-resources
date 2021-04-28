@@ -104,16 +104,18 @@ const Home = ({ history }) => {
           <h5>List of Vaccine Distributors and Suppliers</h5>
           <ul>
             <li>
-              <a href="https://drive.google.com/file/d/1_xyOp8IW1m7LVtDNnU8LmgyQAuTiv8jO/view?usp=sharing">
-                Remdisivir Distributors List
-              </a>
-            </li>
-            <li>
               <a href="https://drive.google.com/file/d/1DCUHWRUz-Zss2P93bSby2T4uyZWJTr69/view?usp=sharing">
                 Tocilizumab Distributor List
               </a>
             </li>
           </ul>
+        </Alert>
+        <Alert variant="info" className="break">
+          <h5>
+            <a href="https://www.google.com/maps/d/viewer?mid=1yxvXy78wkNoYdtKHYDCPu0lcFfgqB0yq&shorturl=1&ll=28.656388086331848%2C77.13615215305117&z=12">
+              Important Mental Health Resources
+            </a>
+          </h5>
         </Alert>
       </Container>
     </>
