@@ -54,7 +54,9 @@ const Region = ({ match }) => {
 
   useEffect(() => {
     getData(location);
-  }, [location]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     function onlyUnique(value, index, self) {
