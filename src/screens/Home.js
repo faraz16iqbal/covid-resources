@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React, { useEffect } from "react";
 import { Jumbotron, Form, Container, Alert } from "react-bootstrap";
 // import CardComp from "../components/CardComp";
@@ -24,6 +25,7 @@ const Home = ({ history }) => {
     ["rajasthan", "Rajasthan"],
     ["aligarh", "Aligarh"],
     ["gujarat", "Gujarat"],
+    ["orissa", "Orrisa"],
   ];
 
   useEffect(() => {
@@ -59,9 +61,19 @@ const Home = ({ history }) => {
           <h2>Other List Of Important Resources</h2>
         </Container>
 
+        <Alert className="break" variant="warning">
+          <h5>
+            <a href="https://covidelhi.com/donate" target="_blank">
+              FUNDRAISERS FOR COVID RELIEF (PLEASE DONATE)
+            </a>
+          </h5>
+        </Alert>
         <Alert className="break" variant="danger">
           <h5>
-            <a href="https://coronabeds.jantasamvad.org/beds.html">
+            <a
+              href="https://coronabeds.jantasamvad.org/beds.html"
+              target="_blank"
+            >
               Delhi Govt's Website for Bed Availability
             </a>
           </h5>
