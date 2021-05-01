@@ -22,6 +22,7 @@ const Home = ({ history }) => {
     ["AP", "Andhra Pradesh"],
     ["lucknow", "Lucknow"],
     ["mp", "Madhya Pradesh"],
+    ["assam", "Assam"],
     ["haryana", "Haryana"],
     ["punjab", "Punjab"],
     ["jk", "Jammu and Kashmir"],

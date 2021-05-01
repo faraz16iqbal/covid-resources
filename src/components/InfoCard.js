@@ -23,12 +23,14 @@ export const InfoCard = ({ data }) => {
         <Card.Text className="mb-2 h5">
           Extra Info : {data.extrainfo && data.extrainfo}
         </Card.Text>
-        <Card.Text className="mb-2 h5">
+        <h5 className="mb-2 h5">
           Helpline :{" "}
-          <Card.Link className="h5" href={`tel:${data.helpline}`}>
-            {data.helpline}
-          </Card.Link>
-        </Card.Text>
+          {data.helpline && (
+            <Card.Link className="h5" href={`tel:${data.helpline}`}>
+              {data.helpline}
+            </Card.Link>
+          )}
+        </h5>
 
         {data.links ? (
           <Card.Text className="mb-2 h5 text-lowercase">

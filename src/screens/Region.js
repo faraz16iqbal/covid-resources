@@ -39,6 +39,7 @@ const Region = ({ match }) => {
   };
   const getData = async (location) => {
     const tempData = await fetchData(location);
+
     function sortBy(field) {
       return function (a, b) {
         return (
@@ -47,7 +48,9 @@ const Region = ({ match }) => {
         );
       };
     }
+
     tempData.sort(sortBy("facility"));
+
     setData(tempData);
     setLoading(false);
   };
