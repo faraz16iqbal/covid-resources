@@ -127,11 +127,9 @@ const Home = ({ history }) => {
             </li>
           </ul>
         </Alert>
-        <Alert variant="info" className="break">
+        <Alert variant="success" className="break">
           <h5>
-            <a href="https://www.google.com/maps/d/viewer?mid=1yxvXy78wkNoYdtKHYDCPu0lcFfgqB0yq&shorturl=1&ll=28.656388086331848%2C77.13615215305117&z=12">
-              Important Mental Health Resources
-            </a>
+            <a href="/mentalhealth">Important Mental Health Resources</a>
           </h5>
         </Alert>
       </Container>
