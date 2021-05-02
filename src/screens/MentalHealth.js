@@ -1,80 +1,72 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { useEffect, useState } from "react";
-import { Jumbotron, Container, Form, Button } from "react-bootstrap";
-import { InfoCard } from "../components/InfoCard";
+import { Jumbotron, Container, Card, Button } from "react-bootstrap";
 import Spin from "../components/Spinner";
-import { fetchData } from "../data";
+import { fetchMHData } from "../data";
 
-const MentalHealth = ({ match }) => {
+const MentalHealth = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [buttons, setButtons] = useState([]);
-  const [choice, setChoice] = useState("All");
+  const [current, setCurrent] = useState(10);
 
-  const location = match.params.id;
-
-  const display = (value) => {
-    let tempData = data;
-    if (value !== "All") {
-      tempData = data.filter(function (item) {
-        return item.facility.toLowerCase() === value;
-      });
-    }
-
-    function sortBy(field) {
-      return function (a, b) {
-        return (a[field] > b[field]) - (a[field] < b[field]);
-      };
-    }
-
-    tempData.sort(sortBy("status")).reverse();
-    // setViewData(tempData);
-
-    return tempData.map((d, index) => <InfoCard id={index} data={d} />);
-  };
-
-  const onSelect = (e) => {
-    setChoice(e.target.value);
-    display(e.target.value);
-  };
   const getData = async (location) => {
-    const tempData = await fetchData(location);
-    function sortBy(field) {
-      return function (a, b) {
-        return (
-          (a[field].toLowerCase() > b[field].toLowerCase()) -
-          (a[field].toLowerCase() < b[field].toLowerCase())
-        );
-      };
-    }
-    tempData.sort(sortBy("facility"));
+    const tempData = await fetchMHData(location);
     setData(tempData);
     setLoading(false);
   };
 
-  useEffect(() => {
-    getData(location);
-  }, [location]);
+  const variants = [
+    "Primary",
+    "Secondary",
+    "Success",
+    "Danger",
+    "Warning",
+    "Info",
+    "Light",
+    "Dark",
+  ];
+
+  const btnClick = () => {
+    let next = current + 10;
+    if (next > data.length) next = data.length - 1;
+    setCurrent(next);
+  };
+
+  const display = () => {
+    const tempData = data.slice(0, current);
+
+    return tempData.map((x, idx) => (
+      <Card
+        bg={variants[idx % 8].toLowerCase()}
+        key={idx}
+        text={variants[idx % 8].toLowerCase() === "light" ? "dark" : "white"}
+        style={{ width: "30rem" }}
+        className="my-4 hoverclass"
+      >
+        <Card.Header style={{ fontSize: "1.25rem" }}>
+          {x.name && x.name}
+        </Card.Header>
+        <Card.Body>
+          <Card.Title> Fee : {x.fee ? x.fee : "Not mentioned"}</Card.Title>
+          <Card.Text> Contact Number : {x.contact && x.contact}</Card.Text>
+          Email :{" "}
+          <Card.Text className="text-lowercase">{x.email && x.email}</Card.Text>
+          <Card.Text> Area : {x.area && x.area}</Card.Text>
+          <Card.Text>Gender : {x.gender}</Card.Text>
+        </Card.Body>
+      </Card>
+    ));
+  };
 
   useEffect(() => {
-    function onlyUnique(value, index, self) {
-      return self.indexOf(value) === index;
-    }
-
-    var tempButtons = [];
-    data.forEach((d) => {
-      tempButtons.push(d.facility);
-    });
-
-    var unique = tempButtons.filter(onlyUnique);
-    setButtons(unique);
-  }, [data]);
+    getData();
+  }, []);
 
   return (
     <>
       <Container className="text-center">
         <Jumbotron>
-          <h1>COVID-19 RESOURCES FOR {location.toUpperCase()}</h1>
+          <h1>MENTAL HEALTH RESOURCES</h1>
           <h4 className="mt-5">
             {" "}
             The website is constatly being updated with the latest resources,
@@ -82,56 +74,24 @@ const MentalHealth = ({ match }) => {
             does not show up with any data or the links provided do not work, do
             not panic and come back a couple of minutes later.{" "}
           </h4>
-          {/* <CardComp /> */}
         </Jumbotron>
-      </Container>
-      <Container className="text-center">
-        <Button
-          variant="info mb-3 px-5 py-2"
-          style={{
-            display: loading ? "none" : "inline-block",
-            fontSize: "1.25rem",
-            marginBottom: "2rem",
-          }}
-          className="buttonn "
-          href="/"
-        >
-          Go Back
-        </Button>
-        <br />
         <Container
-          style={{ display: !loading ? "" : "none" }}
-          className="flex-column align-items-center justify-content-around"
+          className="text-center d-flex flex-wrap justify-content-around "
+          style={{ margin: "0 auto" }}
         >
-          <span className="legends red">Unavailable</span>
-          <span className="legends yellow">Unverified (Might Work)</span>
-          <span className="legends green">Verified / Available</span>
+          {loading ? <Spin /> : display()}
         </Container>
-
-        {!loading && (
-          <Form responsive="true" className="mb-4 mt-4">
-            <Form.Group controlId="exampleForm.SelectCustom">
-              <Form.Control as="select" custom onChange={onSelect}>
-                <option>All</option>
-
-                {buttons.length !== 0
-                  ? buttons.sort().map((b, i) => (
-                      <option key={i} value={b.toLowerCase()}>
-                        {b}
-                      </option>
-                    ))
-                  : ""}
-              </Form.Control>
-            </Form.Group>
-          </Form>
+        {loading ? (
+          " "
+        ) : (
+          <Button
+            className="px-5 py-3 mb-3"
+            variant="outline-danger"
+            onClick={btnClick}
+          >
+            SHOW MORE
+          </Button>
         )}
-      </Container>
-
-      <Container
-        className="text-center text-capitalize"
-        style={{ margin: "0 auto" }}
-      >
-        {loading ? <Spin /> : display(choice)}
       </Container>
     </>
   );

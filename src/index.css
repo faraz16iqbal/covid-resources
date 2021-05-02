@@ -92,3 +92,9 @@ a:link.buttonn {
 .bgimp.card.bg-warning {
   background-color: rgb(212, 164, 31) !important;
 }
+
+div.hoverclass:hover {
+  cursor: pointer;
+  transform: translateY(-20px);
+  transition: all 0.4s ease;
+}
