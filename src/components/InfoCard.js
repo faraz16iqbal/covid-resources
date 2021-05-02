@@ -21,15 +21,25 @@ export const InfoCard = ({ data }) => {
         </Card.Title>
 
         <Card.Text className="mb-2 h5">
+          City : {data.city && data.city}
+        </Card.Text>
+        <Card.Text className="mb-2 h5">
           Extra Info : {data.extrainfo && data.extrainfo}
         </Card.Text>
         <h5 className="mb-2 h5">
           Helpline :{" "}
-          {data.helpline && (
-            <Card.Link className="h5" href={`tel:${data.helpline}`}>
-              {data.helpline}
-            </Card.Link>
-          )}
+          {data.helpline &&
+            data.helpline.split("|").map((help, id) => (
+              <li>
+                <Card.Link
+                  key={id}
+                  className="h5"
+                  href={`tel:${data.helpline}`}
+                >
+                  {help.replace(",", "")}
+                </Card.Link>
+              </li>
+            ))}
         </h5>
 
         {data.links ? (
