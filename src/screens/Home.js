@@ -20,7 +20,6 @@ const Home = ({ history }) => {
     ["gurgaon", "Gurgaon"],
     ["karnataka", "Karnataka"],
     ["chattisgarh", "Chattisgarh"],
-    ["panindia", "Pan India"],
     ["AP", "Andhra Pradesh"],
     ["lucknow", "Lucknow"],
     ["mp", "Madhya Pradesh"],
@@ -53,6 +52,7 @@ const Home = ({ history }) => {
             <Form.Label>Select Region</Form.Label>
             <Form.Control as="select" custom onChange={onSelect}>
               <option value="">Select</option>
+              <option value="panindia">Pan India</option>
               {options.sort().map((op, i) => {
                 return (
                   <option key={i} value={op[0]}>
