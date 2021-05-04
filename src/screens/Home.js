@@ -19,6 +19,7 @@ const Home = ({ history }) => {
     ["westbengal", "West Bengal"],
     ["gurgaon", "Gurgaon"],
     ["karnataka", "Karnataka"],
+    ["chattisgarh", "Chattisgarh"],
     ["AP", "Andhra Pradesh"],
     ["lucknow", "Lucknow"],
     ["mp", "Madhya Pradesh"],
