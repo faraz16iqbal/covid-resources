@@ -31,7 +31,7 @@ const Home = ({ history }) => {
     ["aligarh", "Aligarh"],
     ["gujarat", "Gujarat"],
     ["hyderabad", "Hyderabad"],
-    ["orissa", "Orrisa"],
+    ["odisha", "Orrisa"],
   ];
 
   useEffect(() => {
