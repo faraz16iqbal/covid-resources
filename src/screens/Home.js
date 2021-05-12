@@ -14,7 +14,6 @@ const Home = ({ history }) => {
     ["maharashtra", "Maharashtra"],
     ["agra", "Agra"],
     ["bihar", "Bihar"],
-    ["bangalore", "Bangalore"],
     ["up", "Uttar Pradesh"],
     ["westbengal", "West Bengal"],
     ["gurgaon", "Gurgaon"],
