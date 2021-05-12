@@ -5,7 +5,6 @@ import { Jumbotron, Form, Container, Alert } from "react-bootstrap";
 
 const Home = ({ history }) => {
   const onSelect = (e) => {
-    console.log(e.target.value);
     history.push(`state/${e.target.value.toLowerCase()}`);
   };
 
