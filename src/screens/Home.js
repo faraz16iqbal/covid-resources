@@ -29,7 +29,6 @@ const Home = ({ history }) => {
     ["rajasthan", "Rajasthan"],
     ["aligarh", "Aligarh"],
     ["gujarat", "Gujarat"],
-    ["hyderabad", "Hyderabad"],
     ["odisha", "Odisha"],
   ];
 
