@@ -102,3 +102,7 @@ div.hoverclass:hover {
 .cardfont {
   font-size: 1.2rem;
 }
+
+.cardsz {
+  width: 48%;
+}

@@ -28,6 +28,7 @@ const Region = ({ match }) => {
     }
 
     tempData.sort(sortBy("status")).reverse();
+    console.log(data);
     // setViewData(tempData);
 
     return tempData.map((d, index) => <InfoCard key={index} data={d} />);

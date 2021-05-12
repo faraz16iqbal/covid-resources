@@ -22,7 +22,7 @@ export const InfoCard = ({ data, index }) => {
         text="dark"
         border={variant[0].toLowerCase()}
         className="my-4 bgimp hoverclass"
-        style={{ width: "48%" }}
+        style={{ width: "30rem" }}
       >
         <Card.Header
           className={variant[1]}
