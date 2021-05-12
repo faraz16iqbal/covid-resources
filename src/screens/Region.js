@@ -133,7 +133,7 @@ const Region = ({ match }) => {
       </Container>
 
       <Container
-        className="text-center text-capitalize"
+        className="text-center text-capitalize d-flex flex-wrap justify-content-around"
         style={{ margin: "0 auto" }}
       >
         {loading ? <Spin /> : display(choice)}
