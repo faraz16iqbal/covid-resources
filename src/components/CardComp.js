@@ -13,15 +13,6 @@ const CardComp = () => {
         <li>
           <a
             className="foot"
-            href="https://instagram.com/faraziqbaal"
-            target="_blank"
-          >
-            Instagram
-          </a>
-        </li>
-        <li>
-          <a
-            className="foot"
             href="https://www.twitter.com/unorthodoxfaraz"
             target="_blank"
           >
